@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registan Travel - Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Registan Travel</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="booking.html" class="active">Booking</a>
+            <a href="index-bootstrap.html">Bootstrap Version</a>
+        </nav>
+    </header>
+
+    <main class="booking-main">
+        <div class="booking-card">
+            <h2>Book Your Tour</h2>
+            <form id="bookingForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    <small class="error-msg" id="nameError">Name cannot be empty.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    <small class="error-msg" id="emailError">Please enter a valid email containing '@'.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="tourSelect">Select Tour</label>
+                    <select id="tourSelect" name="tour" required>
+                        <option value="35" data-name="Old Tashkent Walk">Old Tashkent Walk - $35 USD (1 Day)</option>
+                        <option value="120" data-name="Registan & Gur-e-Amir">Registan &amp; Gur-e-Amir - $120 USD (2 Days)</option>
+                        <option value="210" data-name="Khiva Itchan Kala">Khiva Itchan Kala - $210 USD (3 Days)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="travellers">Number of Travellers (1-12)</label>
+                    <input type="number" id="travellers" name="travellers" min="1" max="12" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tourDate">Travel Date</label>
+                    <input type="date" id="tourDate" name="tourDate" required>
+                </div>
+
+                <div class="price-box" id="priceDisplay">
+                    Total: $1 x 35 USD = $35 USD
+                </div>
+
+                <button type="submit" class="btn btn-block">Confirm Booking Request</button>
+            </form>
+
+            <div id="confirmationMessage" class="confirmation-box hidden"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Registan Travel. Owner: Mrs. Dilnoza Rakhimova. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

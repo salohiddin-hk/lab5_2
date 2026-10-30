@@ -1,0 +1,316 @@
+/* CSS Stylesheet for Registan Travel (Parts A, B, & C shared) */
+:root {
+    --registan-night: #0B1F4B;
+    --tile-gold: #E0A526;
+    --brick-red: #C0392B;
+    --sand: #FAF6EE;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: var(--sand);
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .font-georgia {
+    font-family: Georgia, serif;
+    color: var(--registan-night);
+}
+
+/* Group Selector for Headings */
+h1, h2, h3 {
+    letter-spacing: -0.5px;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--registan-night);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* LVHA Order for Links */
+nav a:link, nav a:visited {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 8px 12px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    background-color: var(--tile-gold);
+    color: var(--registan-night);
+    border-radius: 4px;
+}
+
+nav a.active {
+    border-bottom: 2px solid var(--tile-gold);
+}
+
+/* Main Container Offset to Avoid Fixed Header */
+main {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--registan-night), #1B3B7B);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    color: #e2e8f0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--tile-gold);
+    color: var(--registan-night);
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.3s;
+}
+
+.btn:hover {
+    background-color: #d0941f;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Cards & Layout (Mobile-First) */
+.tours-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(11, 31, 75, 0.15);
+}
+
+.badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: var(--tile-gold);
+    color: var(--registan-night);
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.card-content h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.card-content p {
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.card-content .price {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--brick-red);
+    font-size: 1.2rem;
+}
+
+/* Booking Page Styling */
+.booking-main {
+    display: flex;
+    justify-content: center;
+}
+
+.booking-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.booking-card h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--registan-night);
+}
+
+/* Required star via ::after */
+label[for="fullName"]::after,
+label[for="email"]::after,
+label[for="tourSelect"]::after,
+label[for="travellers"]::after,
+label[for="tourDate"]::after {
+    content: " *";
+    color: var(--brick-red);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--registan-night);
+    box-shadow: 0 0 0 3px rgba(11, 31, 75, 0.15);
+}
+
+.form-group input.error,
+.form-group select.error {
+    border-color: var(--brick-red);
+    background-color: #fdf2f2;
+}
+
+.error-msg {
+    display: none;
+    color: var(--brick-red);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.form-group input.error ~ .error-msg {
+    display: block;
+}
+
+.price-box {
+    background-color: #f8fafc;
+    border: 1px dashed var(--registan-night);
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--registan-night);
+    margin: 25px 0;
+}
+
+.confirmation-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #34d399;
+    font-weight: 500;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--registan-night);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Breakpoints (Tablet & Desktop) */
+@media (min-width: 768px) {
+    .tours-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        flex: 1 1 calc(33.333% - 14px);
+    }
+}
